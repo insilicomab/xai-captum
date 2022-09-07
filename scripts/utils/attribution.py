@@ -2,13 +2,14 @@ import captum
 from abc import ABC, abstractmethod
 
 
-# アルゴリズムに依存せず、共通で持っているべきメソッドを定義
+# Abstract Base Class
 class CaptumAlgorithm(ABC):
     @abstractmethod
     def attribution(self, input_img, target):
         pass
 
 
+# Guided GradCAM
 class GuidedGradCamAlgorithm(CaptumAlgorithm):
     def __init__(self, model, layer, device_ids=None):
         self._guided_gc = captum.attr.GuidedGradCam(model, layer, device_ids)
