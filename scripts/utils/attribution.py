@@ -29,8 +29,8 @@ class CaptumVisualizer():
     # and displaying them using the desired mode in a matplotlib figure.
     def visualization_img_attr(
         self,
-        target,
         algorithm: CaptumAlgorithm,
+        target: int,
         method='heat_map',
         sign='absolute_value',
         plt_fig_axis=None,
@@ -67,8 +67,8 @@ class CaptumVisualizer():
     # where k is the number of desired visualizations.
     def visualization_image_attr_multiple(
         self,
-        target,
         algorithm: CaptumAlgorithm,
+        target: int, 
         methods,
         signs,
         titles=None,
